@@ -14,7 +14,14 @@ J = 0;
 %               You should set J to the cost.
 
 
+sum = 0
 
+for i = 1:m
+	a = theta'*X(i,:)' - y(i)
+	a = a*a
+	sum = sum + a
+endfor
+J = sum/(2*m)
 
 
 % =========================================================================
