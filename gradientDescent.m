@@ -16,8 +16,24 @@ for iter = 1:num_iters
     % Hint: While debugging, it can be useful to print out the values
     %       of the cost function (computeCost) and gradient here.
     %
+	sum = 0;
+	for i = 1:m
+		a = theta'*X(i,:)'-y(i)
+		a = a*X(i,1)
+		sum = sum + a
+	endfor
+	tmp1 = theta(1) - sum*alpha/m
 
+	sum = 0;
+	for i = 1:m
+		a = theta'*X(i,:)'-y(i)
+		a = a*X(i,2)
+		sum = sum + a
+	endfor
+	tmp2 = theta(2) - sum*alpha/m
 
+	theta(1) = tmp1;
+	theta(2) = tmp2;
 
 
 
